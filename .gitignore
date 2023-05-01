@@ -8,6 +8,7 @@ bower_components
 .vs
 **/*.sou
 **/*.user
+**/.vscode/
 bin
 obj
 packages
