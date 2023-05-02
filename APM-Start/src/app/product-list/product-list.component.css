@@ -1,6 +1,7 @@
 .main {
   text-align: left;
   margin: 0 40px;
+  padding: 0 15px;
   border: 2px solid lightgray;
   border-radius: 4px;
 }
@@ -8,13 +9,14 @@
 .header {
   background-color: rgba(223, 223, 223, 0.851);
   margin: 0;
+  margin: 0 -15px;
   padding: 15px;
   font-weight: normal;
   border-bottom: 2px solid lightgray;
 }
 
 .filter-panel {
-  padding: 15px;
+  padding: 20px 5px 15px 5px;
 }
 
 .filter-label {
@@ -28,6 +30,7 @@
 }
 
 .table {
+  width: 100%;
   border-top: 2px solid lightgray;
   border-spacing: 0;
 }
