@@ -6,7 +6,7 @@ import data from '../../api/products/products.json';
 @Component({
   selector: 'pm-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css'],
+  styleUrls: ['../app.component.css', './product-list.component.css'],
 })
 export class ProductListComponent implements OnInit, OnChanges {
   pageTitle: string = 'Product List';
