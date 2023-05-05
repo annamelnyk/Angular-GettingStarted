@@ -25,6 +25,10 @@ export class ProductListComponent implements OnInit, OnChanges {
     console.log('changes ', changes);
   }
 
+  onRatingShow(message: string):void {
+    this.pageTitle = message  
+  }
+
   toggleShowImage(): void {
     this.isImageShown = !this.isImageShown;
   }

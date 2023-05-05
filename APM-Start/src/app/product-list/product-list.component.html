@@ -34,6 +34,7 @@
         *ngFor="let productItem of productList"
         [product]="productItem"
         [showImage]="isImageShown"
+        (ratingShow)="onRatingShow($event)"
       ></tr>
     </tbody>
   </table>

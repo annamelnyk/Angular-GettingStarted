@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { IProduct } from '../types';
 
@@ -11,9 +11,15 @@ export class ProductDetailComponent implements OnInit {
 
   @Input() product!: IProduct;
   @Input() showImage!: boolean;
+  @Output() ratingShow: EventEmitter<string> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onNotify(message: string): void {
+    console.log(message);
+    this.ratingShow.emit(message);
   }
 
 }
