@@ -2,6 +2,7 @@ import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
 import { IProduct } from '../types';
 import data from '../../api/products/products.json';
+import { ProductListService } from '../shared/product-list.service';
 
 @Component({
   selector: 'pm-product-list',
@@ -14,19 +15,20 @@ export class ProductListComponent implements OnInit, OnChanges {
   isImageShown: boolean = true;
   filteredProduct: string = '';
 
-  constructor() {}
+  constructor(private productListService: ProductListService) {}
 
   ngOnInit(): void {
-    console.log(data);
-    this.productList = data;
+    this.productListService
+      .getProductList()
+      .subscribe((data) => (this.productList = data));
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('changes ', changes);
   }
 
-  onRatingShow(message: string):void {
-    this.pageTitle = message  
+  onRatingShow(message: string): void {
+    this.pageTitle = message;
   }
 
   toggleShowImage(): void {
@@ -44,7 +46,7 @@ export class ProductListComponent implements OnInit, OnChanges {
           .includes(this.filteredProduct.toLocaleLowerCase())
       );
     } else {
-      this.productList = data;
+      // this.productList = data;
     }
   }
 }
