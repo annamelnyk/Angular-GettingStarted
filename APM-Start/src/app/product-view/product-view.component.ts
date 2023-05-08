@@ -15,13 +15,11 @@ export class ProductViewComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private productListService: ProductListService
-  ) {
-    console.log();
-  }
+  ) {}
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    
+
     this.productListService
       .getProductList()
       .subscribe(

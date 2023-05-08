@@ -12,6 +12,7 @@ import { WelcomeComponent } from './home/welcome.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-space.pipe';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductViewComponent } from './product-view/product-view.component';
+import { ProductViewGuard } from './product-view/product-view.guard';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,11 @@ import { ProductViewComponent } from './product-view/product-view.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'products', component: ProductListComponent },
-      { path: 'products/:id', component: ProductViewComponent },
+      {
+        path: 'products/:id',
+        canActivate: [ProductViewGuard],
+        component: ProductViewComponent,
+      },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', component: PageNotFoundComponent },
