@@ -1,0 +1,10 @@
+.details-container {
+  display: flex;
+}
+.block {
+  flex-grow: 1;
+}
+
+img {
+  max-width: 250px;
+}
