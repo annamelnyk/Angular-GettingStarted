@@ -1,41 +1,46 @@
-<h2>Product List View</h2>
-<main class="main">
-  <h3 class="header">{{ pageTitle }}</h3>
-  <div class="filter-panel">
-    <label class="filter-label" for="filter">Filter by:</label>
-    <input
-      class="filter-input"
-      type="text"
-      name="filteredProduct"
-      id="filter"
-      [(ngModel)]="filteredProduct"
-      (keyup)="filterProductsByName($event)"
-    />
-    <p>{{ filteredProduct }}</p>
+<div class="card">
+  <div class="card-header">
+    {{pageTitle}}
   </div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>
-          <button class="button" (click)="toggleShowImage()">
-            {{ isImageShown ? "Hide" : "Show" }} Image
-          </button>
-        </th>
-        <th>Product</th>
-        <th>Code</th>
-        <th>Available</th>
-        <th>Price</th>
-        <th>5 Star Raiting</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr
-        pm-product-detail
-        *ngFor="let productItem of productList"
-        [product]="productItem"
-        [showImage]="isImageShown"
-        (ratingShow)="onRatingShow($event)"
-      ></tr>
-    </tbody>
-  </table>
-</main>
+  <div class="card-body">
+    <div class="container-fluid">
+      <div class="filter-panel">
+        <label class="filter-label" for="filter">Filter by:</label>
+        <input
+          class="filter-input"
+          type="text"
+          name="filteredProduct"
+          id="filter"
+          [(ngModel)]="filteredProduct"
+          (keyup)="filterProductsByName($event)"
+        />
+        <p>{{ filteredProduct }}</p>
+      </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>
+              <button class="button" (click)="toggleShowImage()">
+                {{ isImageShown ? "Hide" : "Show" }} Image
+              </button>
+            </th>
+            <th>Product</th>
+            <th>Code</th>
+            <th>Available</th>
+            <th>Price</th>
+            <th>5 Star Raiting</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            pm-product-detail
+            *ngFor="let productItem of productList"
+            [product]="productItem"
+            [showImage]="isImageShown"
+            (ratingShow)="onRatingShow($event)"
+          ></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
