@@ -1,12 +1,12 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 
-import { IProduct } from '../types';
-import data from '../../api/products/products.json';
-import { ProductListService } from '../shared/product-list.service';
+import { IProduct } from '../../types';
+import data from '../../../api/products/products.json';
+import { ProductListService } from '../../shared/product-list.service';
 
 @Component({
   templateUrl: './product-list.component.html',
-  styleUrls: ['../app.component.css', './product-list.component.css'],
+  styleUrls: ['../../app.component.css', './product-list.component.css'],
 })
 export class ProductListComponent implements OnInit, OnChanges {
   pageTitle: string = 'Product List';

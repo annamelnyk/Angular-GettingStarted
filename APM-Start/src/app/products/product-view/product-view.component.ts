@@ -1,7 +1,7 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ProductListService } from '../shared/product-list.service';
-import { IProduct } from '../types';
+import { ProductListService } from '../../shared/product-list.service';
+import { IProduct } from '../../types';
 
 @Component({
   selector: 'pm-product-view',

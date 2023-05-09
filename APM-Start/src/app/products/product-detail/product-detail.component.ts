@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
-import { IProduct } from '../types';
+import { IProduct } from '../../types';
 
 @Component({
   selector: '[pm-product-detail]',
